@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1>Thắng có đẹp zai không nạ?</h1>
+<body>
+<p id="answerYes"></p>
+<input type="button" value="Yes" onclick="sayYes()">
+<input id="answerNo" type="button" value="No" onmouseover="sayNo()">
+</body>
+<script>
+    function sayYes() {
+        document.getElementById("answerYes").innerHTML = "Chuẩn hơm phải chỉnh"
+    }
+
+    function init() {
+        answerNo = document.getElementById("answerNo")
+        answerNo.style.position = "relative";
+        answerNo.style.left = "0px"
+    }
+
+    function sayNo() {
+        answerNo = document.getElementById("answerNo")
+        webWidth = window.innerWidth;
+        webHeight = window.innerHeight;
+        randomWidth = Math.floor(Math.random() * (webWidth));
+        randomHeight = Math.floor(Math.random() * (webHeight));
+        answerNo.style.top = randomHeight + "px";
+        answerNo.style.left = randomWidth + "px";
+    }
+
+    window.onload = init()
+</script>
+</html>
